@@ -1,5 +1,3 @@
-# LFSR10B180
-10-Bit Full-Custom LFSR in SCL 180nm CMOS
 # 10-Bit Linear Feedback Shift Register (LFSR)
 **SCL 180nm CMOS | Transistor-Level Full Custom Physical Design**
 
@@ -16,6 +14,11 @@ To maintain stringent control over device geometry, active-area sharing, and par
 * **Maximal Length Sequence (MLS):** Utilizes the Galois Field primitive polynomial `P(x) = x^10 + x^7 + 1` to generate a 1023-state sequence.
 * **Custom 6-NAND Sequential Logic:** Implements an edge-triggered 7474-style architecture, eradicating the localized clock-skew found in standard master-slave setups.
 * **Hardware-Level Initialization:** Utilizes bifurcated `Dff7474_prst` and `Dff7474_rst` standard cells to instantaneously hardwire a deterministic `1100000000` seed upon asynchronous reset, bypassing the critical path delays of datapath multiplexers.
+
+## Cryptographic & Security Applications
+Beyond general pseudo-random number generation (PRNG), this LFSR macro is architected as a foundational primitive for hardware security modules (HSMs) and trusted memory systems.
+* **Deterministic Seeding:** The custom hardwired initialization sequence (bypassing multiplexer logic) inherently protects the macro against fault-injection attacks attempting to force a "zero-lock" stall state.
+* **Stream Cipher Foundation:** The high-frequency 1.75 GHz physical datapath is optimized to serve as a fast keystream generator for lightweight stream ciphers (e.g., Trivium or A5/1 style topologies) in secure IoT edge devices.
 
 ## Post-Layout Performance (PEX Extracted)
 | Parameter | Description | Value |
