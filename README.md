@@ -32,7 +32,21 @@ Beyond general pseudo-random number generation (PRNG), this LFSR macro is archit
 | **Setup / Hold Time** | Internal Feedback limits | 78.5 ps / 14.2 ps |
 *Sign-off: 100% DRC and LVS clean in Siemens Calibre (Metal density errors waived for isolated IP extraction).*
 
-## Module Hierarchy & Pin Configuration
+## Tools Used
+* **Schematic & Layout:** Cadence Virtuoso
+* **Analog/Mixed-Signal Simulation:** Cadence ADE Explorer (Spectre RF)
+* **Physical Verification:** Siemens Calibre (DRC, LVS, PEX)
+
+## Pin Configuration
+| Pin Name | Direction | Description |
+| :--- | :--- | :--- |
+| **VDD** | Input | 1.8V Core Supply |
+| **GND** | Input | 0.0V Reference |
+| **CLK** | Input | System Clock (Rising-edge active) |
+| **PRESET_BAR** | Input | Asynchronous active-low initialization |
+| **Q** | Output | 1-bit pseudo-random serial output |
+
+## Module Hierarchy
 The top module (`lfsr_10bit`) is built from the ground up using fundamental logic gates:
 ```text
 lfsr_10bit
@@ -47,16 +61,4 @@ lfsr_10bit
 |-- xor_n (x1 instance)
 |   |-- nand_2input (x4 instances)
 
-## Tools Used
-* **Schematic & Layout:** Cadence Virtuoso
-* **Analog/Mixed-Signal Simulation:** Cadence ADE Explorer (Spectre RF)
-* **Physical Verification:** Siemens Calibre (DRC, LVS, PEX)
 
-## Pin Configuration
-| Pin Name | Direction | Description |
-| :--- | :--- | :--- |
-| **VDD** | Input | 1.8V Core Supply |
-| **GND** | Input | 0.0V Reference |
-| **CLK** | Input | System Clock (Rising-edge active) |
-| **PRESET_BAR** | Input | Asynchronous active-low initialization |
-| **Q** | Output | 1-bit pseudo-random serial output |
