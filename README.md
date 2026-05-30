@@ -1,0 +1,2 @@
+# LFSR10B180
+10-Bit Full-Custom LFSR in SCL 180nm CMOS
