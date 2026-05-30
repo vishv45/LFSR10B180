@@ -46,3 +46,17 @@ lfsr_10bit
 |
 |-- xor_n (x1 instance)
 |   |-- nand_2input (x4 instances)
+
+## Tools Used
+* **Schematic & Layout:** Cadence Virtuoso
+* **Analog/Mixed-Signal Simulation:** Cadence ADE Explorer (Spectre RF)
+* **Physical Verification:** Siemens Calibre (DRC, LVS, PEX)
+
+## Pin Configuration
+| Pin Name | Direction | Description |
+| :--- | :--- | :--- |
+| **VDD** | Input | 1.8V Core Supply |
+| **GND** | Input | 0.0V Reference |
+| **CLK** | Input | System Clock (Rising-edge active) |
+| **PRESET_BAR** | Input | Asynchronous active-low initialization |
+| **Q** | Output | 1-bit pseudo-random serial output |
