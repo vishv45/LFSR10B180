@@ -8,8 +8,8 @@ This repository contains the full-custom, transistor-level physical implementati
 
 To maintain stringent control over device geometry, active-area sharing, and parasitic routing penalties, automated standard-cell synthesis methodologies were intentionally bypassed. The project encompasses the complete Backend-of-Line (BEOL) workflow: schematic capture of fundamental logic primitives, custom standard cell layout utilizing Euler path optimization, top-level datapath integration, and Siemens Calibre sign-off (DRC, LVS, PEX).
 
-📝 **[View the 2-Page IP Datasheet](docs/LFSR10B180_Datasheet.pdf)**
-📝 **[View the Full Project Report](docs/LFSR_Group10.pdf)**
+📝 **[View the 2-Page IP Datasheet](LFSR10B180_Datasheet.pdf)**
+📝 **[View the Full Project Report](LFSR_Group10.pdf)**
 
 ## Key Architectural Features
 * **Universal NAND Logic:** 100% static-CMOS NAND topology, eliminating pass-transistor logic vulnerabilities and ensuring a full 1.8V rail-to-rail output swing.
